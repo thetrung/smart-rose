@@ -1,0 +1,16 @@
+{
+  "name": "smart_rose",
+  "version": "1.0.0",
+  "description": "a telegram bot take use of AI on solana.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1",
+    "node-telegram-bot-api": "^0.64.0",
+    "telegraf": "^4.15.3"
+  }
+}
