@@ -1,5 +1,4 @@
 
-
 const TelegramBot = require('node-telegram-bot-api')
 const { GoogleGenerativeAI } = require("@google/generative-ai")
 const { HarmBlockThreshold, HarmCategory } = require("@google/generative-ai")
@@ -40,15 +39,19 @@ function delay(time, action) {
 
 async function run(prompt, id, callback) {
     try {
-        const model = genAI.getGenerativeModel(
-            { model: "gemini-pro",    
-                generationConfig : {
-                maxOutputTokens: 100
-            }
-        });      
-      const result = await model.generateContent(prompt, safetySettings);
-      const response = await result.response;
-      const text = response.text()
+        const answer = await ollama.invoke(`why is the sky blue?`);
+        console.log(answer)
+        const text = answer
+
+    //     const model = genAI.getGenerativeModel(
+    //         { model: "gemini-pro",    
+    //             generationConfig : {
+    //             maxOutputTokens: 100
+    //         }
+    //     });      
+    //   const result = await model.generateContent(prompt, safetySettings);
+    //   const response = await result.response;
+    //   const text = response.text()
       // return
       callback(text)
     } catch (e){
